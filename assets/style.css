@@ -117,10 +117,40 @@ button,
   height: 100%;
 }
 
+/* Hero section */
+
 .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("hero.png");
   background-size: cover;
   height: 200px;
+}
+
+.hero .circle {
+  display: table;
+  width: 200px;
+  height: 200px;
+  margin: 0 50px;
+  border-radius: 200px;
+}
+
+.hero .circle p {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hero .circle span {
+  font-weight: bold;
+}
+
+.hero .circle span:not(.number) {
+  display: block;
+}
+
+footer .navbar-brand {
+  height: 70px;
 }
 
 @media only screen and (min-width: 768px) {
