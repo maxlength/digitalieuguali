@@ -1,0 +1,78 @@
+:root {
+  --main-white: #ffffff;
+  --main-blue: #00b3ba;
+  --main-orange: #f6a000;
+  --main-grey: #3f3f3e;
+  --secondary-blue: #c1deea;
+  --secondary-orange: #ffe48d;
+  --secondary-grey: #ebebeb;
+}
+
+/* Text colors */
+
+.mainWhite-color {
+  color: var(--main-white);
+}
+
+.mainBlue-color {
+  color: var(--main-blue);
+}
+
+.mainOrange-color {
+  color: var(--main-orange);
+}
+
+.mainGrey-color {
+  color: var(--main-grey);
+}
+
+/* Background colors */
+
+.mainWhite-bg {
+  background-color: var(--main-white);
+}
+
+.mainBlue-bg {
+  background-color: var(--main-blue);
+}
+
+.mainOrange-bg {
+  background-color: var(--main-orange);
+}
+
+.mainGrey-bg {
+  background-color: var(--main-grey);
+}
+.secondaryBlue-bg {
+  background-color: var(--secondary-blue);
+}
+.secondaryOrange-bg {
+  background-color: var(--secondary-orange);
+}
+.secondaryGrey-bg {
+  background-color: var(--secondary-grey);
+}
+
+/* Headings */
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+button {
+  outline: 0;
+  border: 0;
+}
+
+.hero {
+  background-image: url("hero.png");
+  background-size: cover;
+  height: 600px;
+}
