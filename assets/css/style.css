@@ -6,6 +6,7 @@
   --grey2: #f2f0f1;
   --grey3: #fbfbfb;
   --blue: #00b3ba;
+  --blueOpacity: rgba(0, 179, 183, 0.6);
   --orange: #f7a001;
 }
 
@@ -46,10 +47,10 @@ html {
 body {
   margin: 0;
   font-family: "brandon", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.42857143;
-  color: #333333;
-  background-color: #fff;
+  color: var(--grey);
+  background-color: var(--white);
 }
 
 article,
@@ -215,6 +216,10 @@ li {
   background-color: var(--blue);
 }
 
+.blueOpacity-bg {
+  background-color: var(--blueOpacity);
+}
+
 .orange-bg {
   background-color: var(--orange);
 }
@@ -276,12 +281,6 @@ button,
   flex-wrap: wrap;
 }
 
-/* Text alignment */
-
-.text-center {
-  text-align: center;
-}
-
 /* Container */
 
 .container {
@@ -298,14 +297,25 @@ button,
 
 /* Columns */
 
-.col-lg-4,
-.col-md-6 {
+.col-sm-6,
+.col-md-4,
+.col-md-6,
+.col-lg-4 {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 50px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 415px) {
+  .col-sm-6 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    width: 33.33333333%;
+  }
+  .col-sm-6,
   .col-md-6 {
     width: 50%;
   }
@@ -316,9 +326,8 @@ button,
   }
 }
 
-[class*="col-"],
 .title {
-  padding: 50px;
+  padding: 30px 0 0;
 }
 
 .navbar-brand {
@@ -349,40 +358,147 @@ main {
 /* Hero section */
 
 .hero {
+  height: 580px;
+}
+
+.hero .container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-flow: column;
   justify-content: center;
   background-image: url("../img/hero.jpeg");
   background-size: cover;
-  height: 200px;
+  background-position-y: bottom;
+  position: relative;
+  height: 100%;
+  background-color: var(--blueOpacity);
+}
+
+.hero .container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blueOpacity);
+  z-index: 1;
+}
+
+.hero .square {
+  position: relative;
+  text-align: left;
+  font-size: 30px;
+  width: 100%;
+  padding: 30px 50px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.hero .square .dona {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 5px 10px;
 }
 
 .hero .circle {
-  display: table;
-  width: 150px;
-  height: 150px;
-  margin: 0 20px;
-  border-radius: 150px;
+  position: relative;
+  z-index: 2;
+  padding: 30px 50px;
+  text-align: left;
 }
 
 .hero .circle p {
-  display: table-cell;
-  vertical-align: middle;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0;
 }
 
 .hero .circle span {
-  font-weight: bold;
+  display: block;
 }
 
-.hero .circle span:not(.number) {
-  display: block;
+.hero .circle span.devices {
+  position: absolute;
+  top: 24px;
+  left: 43px;
+  font-size: 68px;
+  letter-spacing: -6px;
+  min-width: 128px;
+}
+
+.hero .circle span.row1 {
+  font-size: 34px;
+  margin-left: 100px;
+  line-height: 0.8;
+}
+
+.hero .circle span.row2 {
+  font-weight: normal;
+  font-size: 27px;
+  margin-top: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .hero {
+    height: 500px;
+  }
+
+  .hero .container:after {
+    display: none;
+  }
+
+  .hero .circle {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    border-radius: 150px;
+    background-color: var(--blueOpacity);
+    border-radius: 225px 225px 0 0;
+    padding: 60px 30px 20px;
+  }
+
+  .hero .circle span.devices {
+    top: 55px;
+    left: 29px;
+  }
+
+  .hero .square {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    width: 400px;
+    background-color: var(--blueOpacity);
+  }
 }
 
 /* Partner */
 
+.partner [class*="col-"] {
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.partner p {
+  margin: 0 0 10px;
+}
+
+.partner li {
+  margin: 0 20px;
+}
+
 .partner a {
   display: inline-block;
-  height: 50px;
+  height: 70px;
 }
 
 .partner a img {
@@ -390,9 +506,26 @@ main {
   width: auto;
 }
 
-/* Come funziona */
+@media only screen and (min-width: 1024px) {
+  .partner [class*="col-"] {
+    flex-flow: row;
+  }
+}
 
-.howWorks img {
+.fascia1 img {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 992px) {
+  .fascia1 {
+    text-align: left;
+  }
+}
+
+/* Fascia 2 */
+
+.fascia2 img {
   max-width: 200px;
   margin: 20px auto;
 }
@@ -450,26 +583,7 @@ footer .contact a {
   text-decoration: underline;
 }
 
-/* Media queries */
-
-@media only screen and (min-width: 768px) {
-  .hero {
-    height: 400px;
-  }
-
-  .hero .circle {
-    width: 200px;
-    height: 200px;
-    margin: 0 50px;
-    border-radius: 200px;
-  }
-}
-
 @media only screen and (min-width: 1024px) {
-  .hero {
-    height: 600px;
-  }
-
   footer .fbContact {
     text-align: left;
   }
