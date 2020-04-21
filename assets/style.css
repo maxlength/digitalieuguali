@@ -1,13 +1,14 @@
 /* Variables */
 
 :root {
-  --main-white: #ffffff;
-  --main-blue: #00b3ba;
-  --main-orange: #f6a000;
-  --main-grey: #3f3f3e;
-  --secondary-blue: #c1deea;
-  --secondary-orange: #ffe48d;
-  --secondary-grey: #ebebeb;
+  --white: #ffffff;
+  --grey: #141414;
+  --grey2: #e8e0e4;
+  --grey3: #f2f0f0;
+  --blue: #00b3ba;
+  --blue2: #1c3946;
+  --orange: #f6a000;
+  --orange2: #ffe48d;
 }
 
 /* Normalize */
@@ -71,7 +72,7 @@ a:hover {
 a,
 a:focus,
 a:hover {
-  color: #000000;
+  color: var(--grey);
 }
 
 a:focus {
@@ -90,7 +91,9 @@ h1 {
 }
 
 img {
+  display: block;
   border: 0;
+  width: 100%;
 }
 
 button {
@@ -106,6 +109,12 @@ button {
 button::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 /* Print */
@@ -155,47 +164,54 @@ button::-moz-focus-inner {
 
 /* Text colors */
 
-.mainWhite-color {
-  color: var(--main-white);
+.white-color {
+  color: var(--white);
 }
 
-.mainBlue-color {
-  color: var(--main-blue);
+.blue-color {
+  color: var(--blue);
 }
 
-.mainOrange-color {
-  color: var(--main-orange);
+.orange-color {
+  color: var(--orange);
 }
 
-.mainGrey-color {
-  color: var(--main-grey);
+.grey-color {
+  color: var(--grey);
 }
 
 /* Background colors */
 
-.mainWhite-bg {
-  background-color: var(--main-white);
+.white-bg {
+  background-color: var(--white);
 }
 
-.mainBlue-bg {
-  background-color: var(--main-blue);
+.grey-bg {
+  background-color: var(--grey);
 }
 
-.mainOrange-bg {
-  background-color: var(--main-orange);
+.grey2-bg {
+  background-color: var(--grey2);
 }
 
-.mainGrey-bg {
-  background-color: var(--main-grey);
+.grey3-bg {
+  background-color: var(--grey3);
 }
-.secondaryBlue-bg {
-  background-color: var(--secondary-blue);
+
+.blue-bg {
+  background-color: var(--blue);
 }
-.secondaryOrange-bg {
-  background-color: var(--secondary-orange);
+
+.blue2-bg {
+  background-color: var(--blue2);
 }
-.secondaryGrey-bg {
-  background-color: var(--secondary-grey);
+
+.orange-bg {
+  background-color: var(--orange);
+}
+
+.orange2-bg {
+  background-color: var(--orange2);
 }
 
 /* Headings */
@@ -238,34 +254,27 @@ h6 {
 
 button,
 .button {
-  padding: 3px 5px;
+  display: inline-block;
+  padding: 10px 15px;
   outline: 0;
   border: 0;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
 
 .button:hover {
   text-decoration: none;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* Text alignment */
 
 .text-center {
   text-align: center;
-}
-
-/* Clearfix */
-
-.container:before,
-.container:after,
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: " ";
-}
-
-.container:after,
-.clearfix:after {
-  clear: both;
 }
 
 /* Container */
@@ -286,21 +295,18 @@ button,
 
 .col-lg-4,
 .col-md-6 {
-  position: relative;
-  min-height: 1px;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
 }
 
 @media (min-width: 992px) {
   .col-md-6 {
-    float: left;
     width: 50%;
   }
 }
 @media (min-width: 1200px) {
   .col-lg-4 {
-    float: left;
     width: 33.33333333%;
   }
 }
@@ -311,11 +317,12 @@ button,
 }
 
 .navbar-brand {
-  float: left;
-  height: 100px;
+  display: block;
+  height: 50px;
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
+  box-sizing: content-box;
 }
 
 .navbar-brand:hover,
@@ -326,7 +333,12 @@ button,
 .navbar-brand img {
   display: inline-block;
   height: 100%;
+  width: auto;
   vertical-align: middle;
+}
+
+main {
+  text-align: center;
 }
 
 /* Hero section */
@@ -342,10 +354,10 @@ button,
 
 .hero .circle {
   display: table;
-  width: 200px;
-  height: 200px;
-  margin: 0 50px;
-  border-radius: 200px;
+  width: 150px;
+  height: 150px;
+  margin: 0 20px;
+  border-radius: 150px;
 }
 
 .hero .circle p {
@@ -361,8 +373,76 @@ button,
   display: block;
 }
 
-footer .navbar-brand {
-  height: 70px;
+/* Partner */
+
+.partner a {
+  display: inline-block;
+  height: 50px;
+}
+
+.partner a img {
+  height: 100%;
+  width: auto;
+}
+
+/* Come funziona */
+
+.howWorks img {
+  max-width: 200px;
+  margin: 20px auto;
+}
+
+/* Azienda e privati */
+
+.companyAndPrivates img {
+  max-height: 60px;
+  width: auto;
+  margin: 0 auto;
+}
+
+/* Parlando di noi */
+
+.parlanoDiNoi ul {
+  justify-content: center;
+  align-items: center;
+}
+
+.parlanoDiNoi li {
+  margin: 20px;
+}
+
+.parlanoDiNoi img {
+  max-width: 140px;
+}
+
+/* Footer */
+
+footer {
+  margin: 70px 0 20px;
+  text-align: center;
+}
+
+footer [class*="col-"] {
+  padding: 10px;
+}
+
+footer .flex {
+  justify-content: space-between;
+}
+
+footer .fbContact a {
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer .fbContact img {
+  width: 40px;
+  position: relative;
+  top: -10px;
+}
+
+footer .contact a {
+  text-decoration: underline;
 }
 
 /* Media queries */
@@ -371,10 +451,25 @@ footer .navbar-brand {
   .hero {
     height: 400px;
   }
+
+  .hero .circle {
+    width: 200px;
+    height: 200px;
+    margin: 0 50px;
+    border-radius: 200px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   .hero {
     height: 600px;
+  }
+
+  footer .fbContact {
+    text-align: left;
+  }
+
+  footer .contact {
+    text-align: right;
   }
 }
