@@ -3,12 +3,21 @@
 :root {
   --white: #ffffff;
   --grey: #141414;
-  --grey2: #e8e0e4;
-  --grey3: #f2f0f0;
+  --grey2: #f2f0f1;
+  --grey3: #fbfbfb;
   --blue: #00b3ba;
-  --blue2: #1c3946;
-  --orange: #f6a000;
-  --orange2: #ffe48d;
+  --orange: #f7a001;
+}
+
+@font-face {
+  font-family: "brandon";
+  src: url("../fonts/brandontext-regular.otf");
+}
+
+@font-face {
+  font-family: "brandon";
+  src: url("../fonts/brandontext-bold.otf");
+  font-weight: bold;
 }
 
 /* Normalize */
@@ -36,7 +45,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "brandon", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -115,6 +124,10 @@ ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+li {
+  display: inline-block;
 }
 
 /* Print */
@@ -202,16 +215,8 @@ ul {
   background-color: var(--blue);
 }
 
-.blue2-bg {
-  background-color: var(--blue2);
-}
-
 .orange-bg {
   background-color: var(--orange);
-}
-
-.orange2-bg {
-  background-color: var(--orange2);
 }
 
 /* Headings */
@@ -347,7 +352,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("hero.png");
+  background-image: url("../img/hero.jpeg");
   background-size: cover;
   height: 200px;
 }
