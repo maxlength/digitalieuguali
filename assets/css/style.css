@@ -301,7 +301,8 @@ button,
 .col-sm-6,
 .col-md-4,
 .col-md-6,
-.col-lg-4 {
+.col-lg-4,
+.col-12 {
   width: 100%;
   padding: 50px;
 }
@@ -354,10 +355,6 @@ button,
   vertical-align: middle;
 }
 
-main {
-  text-align: center;
-}
-
 /* Hero section */
 
 .hero {
@@ -390,7 +387,6 @@ main {
 
 .hero .square {
   position: relative;
-  text-align: left;
   font-size: 30px;
   width: 100%;
   padding: 30px 50px;
@@ -409,7 +405,6 @@ main {
   position: relative;
   z-index: 2;
   padding: 30px 50px;
-  text-align: left;
 }
 
 .hero .circle p {
@@ -491,19 +486,17 @@ main {
 
 /* Partner */
 
-.partner h2 {
-  display: none;
-}
-
 .partner [class*="col-"] {
-  padding: 10px;
+  padding: 10px 50px;
   align-items: center;
   justify-content: center;
   flex-flow: column;
 }
 
-.partner p {
-  margin: 0 0 10px;
+.partner .flex {
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
 }
 
 .partner li {
@@ -515,7 +508,7 @@ main {
   height: 70px;
 }
 
-.partner a img {
+.partner img {
   height: 100%;
   width: auto;
 }
@@ -536,12 +529,6 @@ main {
   margin: 0 auto;
 }
 
-@media only screen and (min-width: 768px) {
-  .fascia1 {
-    text-align: left;
-  }
-}
-
 /* Fascia 2 */
 
 .fascia2 img {
@@ -549,7 +536,23 @@ main {
   margin: 20px auto;
 }
 
+@media only screen and (min-width: 768px) {
+  .fascia2 h3 {
+    min-height: 122px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .fascia2 h3 {
+    min-height: 88px;
+  }
+}
+
 /* Fascia 3 */
+
+.fascia3 {
+  text-align: center;
+}
 
 .fascia3 img {
   max-height: 60px;
@@ -558,6 +561,10 @@ main {
 }
 
 /* Parlano di noi */
+
+.parlanoDiNoi h2 {
+  text-align: center;
+}
 
 .parlanoDiNoi ul {
   justify-content: center;
