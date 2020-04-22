@@ -491,6 +491,10 @@ main {
 
 /* Partner */
 
+.partner h2 {
+  display: none;
+}
+
 .partner [class*="col-"] {
   padding: 10px;
   align-items: center;
