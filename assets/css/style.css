@@ -80,7 +80,6 @@ a:hover {
 }
 
 a,
-a:focus,
 a:hover {
   color: var(--grey);
 }
@@ -429,7 +428,8 @@ main {
   left: 43px;
   font-size: 68px;
   letter-spacing: -6px;
-  min-width: 128px;
+  min-width: 103px;
+  text-align: right;
   text-shadow: 0 0 5px transparent;
   transition: all ease 1s;
 }
@@ -440,7 +440,7 @@ main {
 
 .hero .circle span.row1 {
   font-size: 34px;
-  margin-left: 100px;
+  margin-left: 103px;
   line-height: 0.8;
 }
 
@@ -477,7 +477,7 @@ main {
 
   .hero .circle span.devices {
     top: 55px;
-    left: 29px;
+    left: 24px;
   }
 
   .hero .square {
