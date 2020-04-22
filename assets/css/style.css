@@ -428,6 +428,12 @@ main {
   font-size: 68px;
   letter-spacing: -6px;
   min-width: 128px;
+  text-shadow: 0 0 5px transparent;
+  transition: all ease 1s;
+}
+
+.hero .circle span.devices.glow {
+  text-shadow: 0 0 15px white;
 }
 
 .hero .circle span.row1 {
