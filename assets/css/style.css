@@ -499,7 +499,11 @@ button,
   padding-bottom: 30px;
 }
 
-.partner li {
+.partner .logos .flex {
+  margin-right: 20px;
+}
+
+.partner .logo {
   margin: 0 20px;
 }
 
@@ -516,6 +520,15 @@ button,
 @media only screen and (min-width: 1024px) {
   .partner [class*="col-"] {
     flex-flow: row;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .partner .intro {
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }
 
