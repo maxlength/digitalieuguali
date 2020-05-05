@@ -486,21 +486,28 @@ button,
 }
 
 /* Partner */
-
 .partner [class*="col-"] {
   align-items: center;
   justify-content: center;
   flex-flow: column;
 }
 
-.partner .flex {
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 30px;
+@media only screen and (min-width: 1024px) {
+  .partner [class*="col-"] {
+    flex-flow: row;
+  }
 }
 
-.partner .logos .flex {
-  margin-right: 20px;
+.partner .flex {
+  align-items: center;
+}
+.partner .intro {
+  margin-right: 10px;
+}
+
+.partner .logos {
+  justify-content: space-between;
+  padding: 0 90px 50px 90px;
 }
 
 .partner .logo {
@@ -516,21 +523,43 @@ button,
   height: 100%;
   width: auto;
 }
-
-@media only screen and (min-width: 1024px) {
-  .partner [class*="col-"] {
-    flex-flow: row;
-  }
+.partner .logo-comune {
+  display: flex;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and  (max-width: 767px) {
+  .partner .logos {
+    flex-direction: column;
+    padding: 0 10px 40px 10px;
+  }
+  .partner .logos .flex {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
   .partner .intro {
-    margin-bottom: 20px;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
+    margin: 0 0 20px 0;
+  }
+  .partner .logo-comune {
+    justify-content: space-between;
+    align-items: center;
   }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .partner .logos {
+    padding: 0 50px 50px 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1359px) {
+  .partner .logos {
+    justify-content: space-around;
+  }
+  .partner .logos .comune {
+    margin-top: 30px;
+  }
+}
+
 
 /* Fascia 1 */
 
